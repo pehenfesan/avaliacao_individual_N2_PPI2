@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Acadêmico</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Painel de Senhas</h1>
+    <h2>Senhas com o Status 'Na fila'</h2>
+    {% for senha in senhas %}
+        {% if senha.StatusSenha_id.nome == 'Na fila' %}
+        <ul>
+            <li>Senha: {{senha.senha}}</li>
+            <li>Data/Hora: {{senha.hora_data}}</li>
+            <li>Categoria: {{senha.Categoria_id.nome}}</li>
+            <li>Tipo: {{senha.Tipo_id.nome}}</li>
+            <li>Status: {{senha.StatusSenha_id.nome}}</li>
+        </ul>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
